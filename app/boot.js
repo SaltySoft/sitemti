@@ -62,6 +62,12 @@ define([
         } else {
             document.attachEvent("onmousewheel", MouseWheelHandler);
         }
+
+        $(".slide").click(function () {
+            if (!$(this).hasClass("active")) {
+                window.location = $(this).attr("data-url");
+            }
+        });
     };
 
     var init = function () {
@@ -100,6 +106,7 @@ define([
                 div.css("background", page.background);
                 div.addClass("slide");
                 div.addClass(page.class);
+                div.attr("data-url", "#" + page.urls[page.urls.length - 1]);
                 if (page.content) {
                     $.ajax({
                         url: "/templates/" + page.content,
