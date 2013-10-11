@@ -1,10 +1,18 @@
-require.config({
+requirejs.config({
     baseUrl: 'app',
     paths: {
-        jquery: 'lib/jquery'
+        jquery: 'lib/jquery',
+        underscore: 'lib/underscore',
+        backbone: 'lib/backbone'
+    },
+    shim: {
+        'backbone': {
+            deps: ['jquery','underscore'],
+            exports: 'Backbone'
+        }
     }
 });
 
-require(["jquery", 'boot'], function ($, boot) {
+requirejs(["jquery", 'boot'], function ($, boot) {
     boot.init();
 });
