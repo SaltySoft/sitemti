@@ -91,12 +91,15 @@ define([
                         });
                         hash = null;
                         current_offset = k;
+                        $(".slide").removeClass("active");
+                        $(".slide." + page.class).addClass("active");
                     });
                 }
 
                 var div = $(document.createElement("div"));
                 div.css("background", page.background);
                 div.addClass("slide");
+                div.addClass(page.class);
                 if (page.content) {
                     $.ajax({
                         url: "/templates/" + page.content,

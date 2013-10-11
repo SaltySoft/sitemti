@@ -3,6 +3,7 @@ define(function () {
         {
             name: "Presentation",
             class: "presentation",
+            baseclass: "presentation",
             urls: [
                 "", "presentation"
             ],
