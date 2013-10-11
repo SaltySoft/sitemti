@@ -1,13 +1,14 @@
+@header-height: 155px;
 #header {
   margin: auto;
-  height: 155px;
+  height: @header-height;
   width: @site-width; //background: url(/resources/topmenusprite.png) 20px 30px;
 
   #logo {
     float: left;
     display: block;
     width: 216px;
-    height: 155px;
+    height: @header-height;
     background: url(/resources/topmenusprite.png) 0 0;
 
     &:hover {
