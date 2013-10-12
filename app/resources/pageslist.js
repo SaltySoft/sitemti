@@ -63,7 +63,8 @@ define(function () {
             urls: [
                 "debouches"
             ],
-            background: "#0372fc"
+            background: "#0372fc",
+            content: "débouchés/débouchés.html"
         },
 
         {

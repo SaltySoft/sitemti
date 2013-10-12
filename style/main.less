@@ -4,35 +4,35 @@
 @site-width: 980px;
 @header-height: 155px;
 html {
-  height: 100%;
-  body {
-    font-size: 14px;
-    font-family: arimo;
-    background: #1E2122;
-    overflow-x: hidden;
     height: 100%;
+    body {
+        font-size: 14px;
+        font-family: arimo;
+        background: #1E2122;
+        overflow-x: hidden;
+        height: 100%;
 
-    #container {
-      width: 100%;
-      height: 100%;
+        #container {
+            width: 100%;
+            height: 100%;
 
-      #slides {
+            #slides {
+            @import "débouchés/débouchés";
+                width: 2000px;
+                margin-left: ~"calc(50% - 495px)";
+                height: ~"calc(100% - @{header-height})";
+                #slides_container {
+                    height: 100%;
+                    position: relative;
+                @import "slide";
+                }
 
-        width: 2000px;
-        margin-left: ~"calc(50% - 495px)";
-        height: ~"calc(100% - @{header-height})";
-        #slides_container {
-          height: 100%;
-          position: relative;
-        @import "slide";
+            }
         }
-
-      }
+    @import "header";
     }
-  @import "header";
-  }
 
-  .clearer {
-    clear: both;
-  }
+    .clearer {
+        clear: both;
+    }
 }

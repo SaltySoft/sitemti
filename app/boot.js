@@ -8,7 +8,7 @@ define([
     var header = $("#header");
 
     var Router = Backbone.Router.extend({
-        routes: {
+        routes:{
 
         }
     });
@@ -91,7 +91,7 @@ define([
 
                         $("#slides_container").stop();
                         $("#slides_container").animate({
-                            left: -(k * 990)
+                            left:-(k * 990)
                         }, 1000, "swing", function () {
                             $(".slide").removeClass("moving");
                         });
@@ -109,8 +109,8 @@ define([
                 div.attr("data-url", "#" + page.urls[page.urls.length - 1]);
                 if (page.content) {
                     $.ajax({
-                        url: "/templates/" + page.content,
-                        success: function (data, status) {
+                        url:"/templates/" + page.content,
+                        success:function (data, status) {
                             var xml = $($.parseHTML(data));
                             div.html(xml.find('div[id="content"]'));
                         }
@@ -130,6 +130,6 @@ define([
     };
 
     return {
-        init: init
+        init:init
     };
 });
