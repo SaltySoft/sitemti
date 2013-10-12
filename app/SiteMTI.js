@@ -6,7 +6,6 @@ var apps = [
 ];
 
 define(apps, function ($, _, Backbone, pages_list) {
-
     var SiteMTI = {
         boot:function () {
             console.log(Backbone);
@@ -48,8 +47,8 @@ define(apps, function ($, _, Backbone, pages_list) {
 
             SiteMTI.register_events = function () {
                 $(document).keydown(function (e) {
-                    console.log(e.keyCode);
-                    console.log(pages_list, SiteMTI.current_offset, pages_list[parseInt(SiteMTI.current_offset) + 1]);
+//                    console.log(e.keyCode);
+//                    console.log(pages_list, SiteMTI.current_offset, pages_list[parseInt(SiteMTI.current_offset) + 1]);
 
                     if (e.keyCode == 37) {
                         SiteMTI.move_left();

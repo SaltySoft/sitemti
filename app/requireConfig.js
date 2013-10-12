@@ -2,8 +2,9 @@ var sb_paths = {
     jquery:"lib/jquery",
     underscore:"lib/underscore",
     backbone:"lib/backbone",
-    text: "lib/text",
+    text:"lib/text",
     pageslist:"resources/pageslist",
+    carousel:"carousel",
     SiteMTI:"SiteMTI"
 };
 
@@ -14,5 +15,8 @@ var sb_shim = {
     'backbone':{
         deps:['jquery', 'underscore'],
         exports:'Backbone'
+    },
+    'carousel':{
+        deps:['jquery', 'underscore', 'backbone', 'text']
     }
 };
