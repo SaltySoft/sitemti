@@ -13,9 +13,10 @@ define([
         },
         init:function (template_list, vertical) {
             var base = this;
-            base.index = 1;
+            base.index = 0;
             base.template_list = template_list;
-
+            base.maxIndex = base.template_list.length;
+            console.log("maxIndex", base.maxIndex);
             if (vertical) {
                 base.vertical = true;
             }
@@ -73,17 +74,56 @@ define([
             var index2 = active_item.attr("index");
             console.log("index", index);
             console.log("index2", index2);
-            base.index = index2;
-//            return index2;
+
+            return index2;
         },
         slideTo:function (position) {
-
+            var base = this;
+            var items = $(base.$el.find(".carousel-inner-content")).children();
+            var indicators = $(base.$el.find(".carousel-index-indicators")).children();
+            items.each(function () {
+                var elt = $(this);
+                if (elt.attr("index") == position) {
+                    elt.addClass("active");
+                } else {
+                    elt.removeClass("active");
+                }
+            });
+            indicators.each(function () {
+                var elt = $(this);
+                if (elt.attr("data-slide-to") == position) {
+                    elt.addClass("active");
+                } else {
+                    elt.removeClass("active");
+                }
+            });
+            base.index = position;
         },
         next:function () {
-
+            var base = this;
+            var newIndex = base.index + 1;
+            if (newIndex > base.maxIndex - 1) {
+                newIndex = 0;
+            }
+            else {
+                if (newIndex < 0) {
+                    newIndex = base.maxIndex - 1;
+                }
+            }
+            base.slideTo(newIndex);
         },
         previous:function () {
-
+            var base = this;
+            var newIndex = base.index - 1;
+            if (newIndex > base.maxIndex - 1) {
+                newIndex = 0;
+            }
+            else {
+                if (newIndex < 0) {
+                    newIndex = base.maxIndex - 1;
+                }
+            }
+            base.slideTo(newIndex);
         },
         registerEvents:function () {
             var base = this;
@@ -92,15 +132,19 @@ define([
                 var elt = $(this);
                 if (elt.attr("data-slide") == "prev") {
                     console.log("carousel-control PREV");
+                    base.previous();
                 }
                 if (elt.attr("data-slide") == "next") {
                     console.log("carousel-control NEXT");
+                    base.next();
                 }
+
             });
             base.$el.delegate(".carousel-index-indicators li", "click", function () {
                 var elt = $(this);
-                var slideTo = elt.attr("data-slide-to");
-                console.log(".carousel-index-indicators li ", slideTo);
+                var nb = elt.attr("data-slide-to");
+                console.log(".carousel-index-indicators li ", nb);
+                base.slideTo(nb);
             });
 
         }
