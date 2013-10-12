@@ -1,4 +1,9 @@
-define(function () {
+var views = [
+    '/app/views/debouches.js'
+];
+
+define(views,
+    function (debouchesView) {
     var list = [
         {
             name:"Presentation",
@@ -64,6 +69,10 @@ define(function () {
                 "debouches"
             ],
             background:"#0372fc",
+            view:debouchesView,
+            getView:function () {
+                return new debouchesView();
+            },
             content:"débouchés/débouchés.html"
         },
 

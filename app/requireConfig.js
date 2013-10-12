@@ -2,6 +2,7 @@ var sb_paths = {
     jquery:"lib/jquery",
     underscore:"lib/underscore",
     backbone:"lib/backbone",
+    text: "lib/text",
     pageslist:"resources/pageslist",
     SiteMTI:"SiteMTI"
 };

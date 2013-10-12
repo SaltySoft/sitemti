@@ -1,9 +1,11 @@
-define([
+var apps = [
     'jquery',
     'underscore',
     'backbone',
     'pageslist'
-], function ($, _, Backbone, pages_list) {
+];
+
+define(apps, function ($, _, Backbone, pages_list) {
 
     var SiteMTI = {
         boot:function () {
@@ -106,23 +108,30 @@ define([
                         });
                     }
 
-                    var div = $(document.createElement("div"));
-                    div.css("background", page.background);
-                    div.addClass("slide");
-                    div.addClass(page.class);
-                    div.attr("data-url", "#" + page.urls[page.urls.length - 1]);
-                    if (page.content) {
-                        $.ajax({
-                            url:"/templates/" + page.content,
-                            success:function (data, status) {
-                                var xml = $($.parseHTML(data));
-                                div.html(xml.find('div[id="content"]'));
-                            }
-                        });
+                    if (page.view) {
+                        var view = page.getView();
+                        $("#slides").css("width", $("#slides").width() + 1040);
+                        $("#slides_container").append(view.$el);
+                        view.init(page);
                     }
-
-                    $("#slides").css("width", $("#slides").width() + 1040);
-                    $("#slides_container").append(div);
+                    else {
+                        var div = $(document.createElement("div"));
+                        div.css("background", page.background);
+                        div.addClass("slide");
+                        div.addClass(page.class);
+                        div.attr("data-url", "#" + page.urls[page.urls.length - 1]);
+                        if (page.content) {
+                            $.ajax({
+                                url:"/templates/" + page.content,
+                                success:function (data, status) {
+                                    var xml = $($.parseHTML(data));
+                                    div.html(xml.find('div[id="content"]'));
+                                }
+                            });
+                        }
+                        $("#slides").css("width", $("#slides").width() + 1040);
+                        $("#slides_container").append(div);
+                    }
                 })(page, k);
 
             }
