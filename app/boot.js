@@ -68,6 +68,11 @@ define([
                 window.location = $(this).attr("data-url");
             }
         });
+
+//        $(window).resize(function () {
+//            var w = $(window);
+//            $('.slide').css("width", w.width() / 2);
+//        });
     };
 
     var init = function () {
