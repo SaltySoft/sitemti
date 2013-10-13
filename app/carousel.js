@@ -75,6 +75,19 @@ define([
                 var template = _.template(base.template_list[k], {
                 });
                 div.html(template);
+
+//CANT FIGURE WHY HEIGHT IS NOT ACCESSIBLE AT THIS LEVEL
+//                var elt = $(div);
+//                var height_carousel = parseInt($(base.$el).css("height"), 10);
+//                var eltChildren = elt.children();
+//                console.log("eltChildren", eltChildren);
+//                if (eltChildren.length > 0) {
+//                    var firstChild = elt.children(":first");
+//                    var firstChild_height = parseInt(firstChild.css("height"), 10);
+//                    console.log("firstChild_height", firstChild_height);
+//                    console.log("height_carousel", height_carousel);
+//                    elt.css("padding-top", (height_carousel - firstChild_height) / 2);
+//                }
                 cic.append(div);
             }
         },
