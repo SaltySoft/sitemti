@@ -1,115 +1,125 @@
-define(function () {
+var views = [
+    '/app/views/debouches.js'
+];
+
+define(views,
+    function (debouchesView) {
     var list = [
         {
-            name: "Presentation",
-            class: "presentation",
-            baseclass: "presentation",
-            urls: [
+            name:"Presentation",
+            class:"presentation",
+            baseclass:"presentation",
+            urls:[
                 "", "presentation"
             ],
-            background: "#601a85",
-            content: "presentation/presentation.html"
+            background:"#601a85",
+            content:"presentation/presentation.html"
         },
         {
-            name: "Cours premier semestre",
-            baseclass: "cours",
-            class: "cours1",
-            urls: [
+            name:"Cours premier semestre",
+            baseclass:"cours",
+            class:"cours1",
+            urls:[
                 "cours-premier-semestre"
             ],
-            background: "#e9c500",
-            content: "cours/cours-langage-technologies.html"
+            background:"#e9c500",
+            content:"cours/cours-langage-technologies.html"
         },
         {
-            name: "Cours second semestre",
-            baseclass: "cours",
-            class: "cours2",
-            urls: [
+            name:"Cours second semestre",
+            baseclass:"cours",
+            class:"cours2",
+            urls:[
                 "cours-second-semestre"
             ],
-            background: "#e9c500"
+            background:"#e9c500"
         },
         {
-            name: "Projets généraux",
-            baseclass: "projets",
-            class: "projets1",
-            urls: [
+            name:"Projets généraux",
+            baseclass:"projets",
+            class:"projets1",
+            urls:[
                 "projets-generaux"
             ],
-            background: "#e59d01"
+            background:"#e59d01"
         },
         {
-            name: "PLIC",
-            baseclass: "projets",
-            class: "projets2",
-            urls: [
+            name:"PLIC",
+            baseclass:"projets",
+            class:"projets2",
+            urls:[
                 "projets-plic"
             ],
-            background: "#e59d01"
+            background:"#e59d01"
         },
         {
-            name: "PFEE",
-            baseclass: "projets",
-            class: "projets3",
-            urls: [
+            name:"PFEE",
+            baseclass:"projets",
+            class:"projets3",
+            urls:[
                 "projets-pfee"
             ],
-            background: "#e59d01"
+            background:"#e59d01"
         },
         {
-            name: "Débouchés",
-            baseclass: "debouches",
-            class: "debouches",
-            urls: [
+            name:"Débouchés",
+            baseclass:"debouches",
+            class:"debouches",
+            urls:[
                 "debouches"
             ],
-            background: "#0372fc"
+            background:"#0372fc",
+            view:debouchesView,
+            getView:function () {
+                return new debouchesView();
+            },
+            content:"débouchés/débouchés.html"
         },
 
         {
-            name: "Professeurs",
-            baseclass: "profs",
-            class: "profs",
-            urls: [
+            name:"Professeurs",
+            baseclass:"profs",
+            class:"profs",
+            urls:[
                 "professeurs"
             ],
-            background: "#f45b25"
+            background:"#f45b25"
         },
         {
-            name: "Barbecue MTI",
-            baseclass: "events",
-            class: "events1",
-            urls: [
+            name:"Barbecue MTI",
+            baseclass:"events",
+            class:"events1",
+            urls:[
                 "events-barbecue"
             ],
-            background: "#4fa429"
+            background:"#4fa429"
         },
         {
-            name: "MS Day",
-            baseclass: "events",
-            class: "events2",
-            urls: [
+            name:"MS Day",
+            baseclass:"events",
+            class:"events2",
+            urls:[
                 "events-msday"
             ],
-            background: "#4fa429"
+            background:"#4fa429"
         },
         {
-            name: "MTI Days",
-            baseclass: "events",
-            class: "events3",
-            urls: [
+            name:"MTI Days",
+            baseclass:"events",
+            class:"events3",
+            urls:[
                 "events-mtidays"
             ],
-            background: "#4fa429"
+            background:"#4fa429"
         },
         {
-            name: "FAQ",
-            baseclass: "faq",
-            class: "faq",
-            urls: [
+            name:"FAQ",
+            baseclass:"faq",
+            class:"faq",
+            urls:[
                 "faq"
             ],
-            background: "#d84999"
+            background:"#d84999"
         }
 
 

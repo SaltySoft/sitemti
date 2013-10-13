@@ -1,18 +1,18 @@
 requirejs.config({
-    baseUrl: 'app',
-    paths: {
-        jquery: 'lib/jquery',
-        underscore: 'lib/underscore',
-        backbone: 'lib/backbone'
-    },
-    shim: {
-        'backbone': {
-            deps: ['jquery','underscore'],
-            exports: 'Backbone'
-        }
-    }
+    baseUrl:'app',
+    paths:sb_paths,
+    shim:sb_shim
 });
 
-requirejs(["jquery", 'boot'], function ($, boot) {
-    boot.init();
+var apps = [
+    "jquery",
+    "underscore",
+    "backbone",
+    "SiteMTI"
+];
+
+$(document).ready(function () {
+    requirejs(apps, function ($, _, Backbone, SiteMTI) {
+        SiteMTI.init();
+    });
 });
