@@ -11,19 +11,24 @@ define([
         initialize:function () {
             var base = this;
         },
-        init:function (template_list, vertical) {
+        init:function (template_list, vertical, transitional) {
             var base = this;
             base.index = 0;
             base.template_list = template_list;
             base.maxIndex = base.template_list.length;
-            console.log("maxIndex", base.maxIndex);
+
             if (vertical) {
                 base.vertical = true;
             }
             else {
                 base.vertical = false;
             }
-
+            if (transitional) {
+                base.transitional = true;
+            }
+            else {
+                base.transitional = false;
+            }
             base.render();
             base.registerEvents();
         },
@@ -39,9 +44,9 @@ define([
                 });
             }
             base.$el.html(template);
-            base.renderTemplates();
+            base.renderElements();
         },
-        renderTemplates:function () {
+        renderElements:function () {
             var base = this;
             base.$el.find(".carousel-inner-content").html("");
             base.$el.find(".carousel-index-indicators").html("");
@@ -55,8 +60,14 @@ define([
                 base.$el.find(".carousel-index-indicators").append(li);
 
                 //carousel-inner-content
+                var cic = base.$el.find(".carousel-inner-content");
                 var div = $(document.createElement("div"));
-                div.addClass("item");
+                if (base.transitional) {
+                    div.addClass("itemTransitional");
+                }
+                else {
+                    div.addClass("item");
+                }
                 if (k == 0) {
                     div.addClass("active");
                 }
@@ -64,7 +75,7 @@ define([
                 var template = _.template(base.template_list[k], {
                 });
                 div.html(template);
-                base.$el.find(".carousel-inner-content").append(div);
+                cic.append(div);
             }
         },
         getActiveIndex:function () {
@@ -79,16 +90,27 @@ define([
         },
         slideTo:function (position) {
             var base = this;
-            var items = $(base.$el.find(".carousel-inner-content")).children();
+            var cic = base.$el.find(".carousel-inner-content");
+            var items = $(cic).children();
             var indicators = $(base.$el.find(".carousel-index-indicators")).children();
+            var height_carousel = parseInt($(base.$el).css("height"), 10);
+
             items.each(function () {
                 var elt = $(this);
+                elt.css("height", height_carousel);
                 if (elt.attr("index") == position) {
                     elt.addClass("active");
                 } else {
                     elt.removeClass("active");
                 }
             });
+            if (base.transitional) {
+                $(cic).css("height", height_carousel * base.template_list.length);
+                $(cic).animate({
+                    top:-(position * height_carousel)
+                }, 1000, "swing", function () {
+                });
+            }
             indicators.each(function () {
                 var elt = $(this);
                 if (elt.attr("data-slide-to") == position) {
