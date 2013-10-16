@@ -42,11 +42,16 @@ define([
             div.addClass("debouches-container");
 
             var templates_list = [debouchesSplit1, debouchesSplit2];
-            var carousel = new Carousel();
-            carousel.init(templates_list, true, true);
-
-            div.html(carousel.$el);
+            base.carousel = new Carousel();
+            div.html(base.carousel.$el);
             base.$el.html(div);
+            base.carousel.init(templates_list, true, true);
+            base.addHeightPadding();
+        },
+        addHeightPadding:function () {
+            var base = this;
+            var height = base.$el.find(".debouches-container").css("height");
+//            base.carousel.addHeightPadding(height);
         },
         registerEvents:function () {
             var base = this;

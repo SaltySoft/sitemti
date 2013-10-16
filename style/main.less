@@ -12,25 +12,27 @@ html {
         overflow-x: hidden;
         height: 100%;
 
+    @import "header";
+    @import "slide";
+    @import "carousel/carousel";
+    @import "débouchés/débouchés";
+    @import "faq/faq";
+
         #container {
             width: 100%;
             height: 100%;
 
             #slides {
-            @import "carousel/carousel";
-            @import "débouchés/débouchés";
                 width: 2000px;
                 margin-left: ~"calc(50% - 495px)";
                 height: ~"calc(100% - @{header-height})";
+
                 #slides_container {
                     height: 100%;
                     position: relative;
-                @import "slide";
                 }
             }
         }
-    @import "header";
-
     }
 
     .clearer {
