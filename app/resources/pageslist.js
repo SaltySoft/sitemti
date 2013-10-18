@@ -202,6 +202,7 @@ define(views,
                 urls: [
                     "professeurs"
                 ],
+                content: "profs/profs.html",
                 background: "#f45b25"
             },
             {
