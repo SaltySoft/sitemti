@@ -193,7 +193,7 @@ define(views,
                 getView: function () {
                     return new debouchesView();
                 },
-                content: "débouchés/débouchés.html"
+                content: "debouches/debouches.html"
             },
             {
                 name: "Professeurs",
