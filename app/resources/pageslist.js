@@ -176,7 +176,6 @@ define(views,
             },
             content:"débouchés/débouchés.html"
         },
-
         {
             name:"Professeurs",
             baseclass:"profs",

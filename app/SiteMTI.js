@@ -14,7 +14,6 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
 
             SiteMTI.Router = Backbone.Router.extend({
                 routes:{
-
                 }
             });
             SiteMTI.router = new SiteMTI.Router();
@@ -131,7 +130,6 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                         }
 
 
-
                         $("#slides").css("width", $("#slides").width() + 1040);
                         $("#slides_container").append(div);
 
@@ -142,22 +140,20 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                             (function (page, menu_slide) {
                                 for (var k in page.subpages) {
                                     var subpage = page.subpages[k];
-                                (function (subpage, menu_slide) {
-                                    $.ajax({
-                                        url:"/templates/" + subpage.content,
-                                        success:function (data, status) {
-                                            var xml = $($.parseHTML(data));
-                                            var content = xml.find('div[id="content"]');
-                                            menu_slide.add_content(subpage.name, content);
-                                            console.log("Added page content", subpage, content);
-                                        }
-                                    });
-                                })(subpage, menu_slide);
+                                    (function (subpage, menu_slide) {
+                                        $.ajax({
+                                            url:"/templates/" + subpage.content,
+                                            success:function (data, status) {
+                                                var xml = $($.parseHTML(data));
+                                                var content = xml.find('div[id="content"]');
+                                                menu_slide.add_content(subpage.name, content);
+                                                console.log("Added page content", subpage, content);
+                                            }
+                                        });
+                                    })(subpage, menu_slide);
                                 }
                             })(page, menu_slide);
-
                         }
-
                     }
                 })(page, k);
 
