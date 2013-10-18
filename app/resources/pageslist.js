@@ -92,7 +92,53 @@ define(views,
                 {
                     name: "Planning",
                     content: "projets/pfee/planning.html"
+                },
+                {
+                    name: "Homeloc",
+                    content : "projets/pfee/homeloc.html"
+                },
+                {
+                    name: "L'Entremise",
+                    content : "projets/pfee/entremise.html"
+                },
+                {
+                    name: "La Place de l'Immobiler Pro",
+                    content : "projets/pfee/place_immobilier.html"
+                },
+                {
+                    name: "Daily Agri",
+                    content : "projets/pfee/daily_agri.html"
+                },
+                {
+                    name: "Virtuel City",
+                    content : "projets/pfee/virtuel_city.html"
+                },
+                {
+                    name: "Juricaf",
+                    content : "projets/pfee/juricaf.html"
+                },
+                {
+                    name: "Volley Me",
+                    content : "projets/pfee/volley_me.html"
+                },
+                {
+                    name: "Yakwala",
+                    content : "projets/pfee/yakwala.html"
+                },
+                {
+                    name: "D-Data Santé",
+                    content : "projets/pfee/d_data_sante.html"
+                },
+                {
+                    name: "Alerte Allergies",
+                    content : "projets/pfee/alerte_allergies.html"
+                },
+                {
+                    name: "OptiConso",
+                    content : "projets/pfee/opti_conso.html"
                 }
+
+
             ]
         },
         {

@@ -33,6 +33,7 @@ define([
                 base.$el.find(".menu_slide_content").html(base.content[0]);
                 console.log(base.content);
                 button.find("a").addClass("selected");
+                Hyphenator.run();
             }
         },
         render: function () {
@@ -50,6 +51,7 @@ define([
                 elt.addClass("selected");
                 base.$el.find(".menu_slide_content").html(base.content[elt.parent().attr("data-index")]);
                 console.log(elt.parent().attr("data-index"), base.content);
+                Hyphenator.run();
             });
         }
     });
