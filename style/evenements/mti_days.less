@@ -1,8 +1,10 @@
+
+
 .events_mti_days {
   font-family: arimo;
   font-size: 14px;
   color: white;
-
+  height: 100%;
 
   strong {
     font-family: openSansCondBold;
@@ -16,7 +18,8 @@
   }
   .description {
     width: 66.66666%;
-    padding-top: 50px;
+    height:~"calc(37.5% - 30px)";
+    padding-top: 25px;
     line-height: 20px;
     > strong, > p {
       padding: 20px;
@@ -27,9 +30,17 @@
   .image1_container {
     width: 33.33333%;
     float: right;
+    height:37.5%;
+    overflow: hidden;
   }
 
   .image2_container {
     width: 100%;
+    height:62.5%;
+    img {
+      width: 100%;
+      margin-top: -100px;
+    }
+    overflow: hidden;
   }
 }
