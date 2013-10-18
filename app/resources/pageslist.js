@@ -22,9 +22,30 @@ define(views,
             urls:[
                 "cours-premier-semestre"
             ],
-            left-menu:true,
-            background:"#e9c500",
-            content:"cours/cours-langage-technologies.html"
+            left_menu:true,
+            subpages:[
+                {
+                    name:"Langages et technologies",
+                    content: "cours/cours-langage-technologies.html"
+                },
+                {
+                    name : "Conception, Design, Ergo",
+                    content : "cours/cours-conception-design-ergo.html"
+                },
+                {
+                    name : "Sciences générales",
+                    content:"cours/cours-SG4.html"
+                },
+                {
+                    name : "Connaissance de l'Entreprise",
+                    content:"cours/cours-CE4.html"
+                },
+                {
+                    name : "Rel. Entreprises & Com",
+                    content:"cours/cours-RENAC.html"
+                }
+            ],
+            background:"#e9c500"
         },
         {
             name:"Cours second semestre",
