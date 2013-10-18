@@ -1,9 +1,10 @@
 var views = [
-    '/app/views/debouches.js'
+    '/app/views/debouches.js',
+    '/app/views/faq.js'
 ];
 
 define(views,
-    function (debouchesView) {
+    function (debouchesView, faqView) {
         var list = [
             {
                 name:"Presentation",
@@ -231,7 +232,12 @@ define(views,
                 urls:[
                     "faq"
                 ],
-                background:"#d84999"
+                background:"#d84999",
+                view:faqView,
+                getView:function () {
+                    return new faqView();
+                },
+                content:"faq/faq1.html"
             }
 
 

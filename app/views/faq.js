@@ -3,11 +3,10 @@ define([
     'underscore',
     'backbone',
     'carousel',
-    'text!/templates/débouchés/debouchesTemplate.html',
-    'text!/templates/débouchés/debouchesSplit1.html',
-    'text!/templates/débouchés/debouchesSplit2.html'
-], function ($, _, Backbone, Carousel, debouchesTemplate, debouchesSplit1, debouchesSplit2) {
-
+    'text!/templates/faq/faqTemplate1.html',
+    'text!/templates/faq/faqTemplate2.html',
+    'text!/templates/faq/faqTemplate3.html'
+], function ($, _, Backbone, Carousel, faqTemplate1, faqTemplate2, faqTemplate3) {
     var View = Backbone.View.extend({
         tagName:"div",
         className:"slide",
@@ -17,8 +16,8 @@ define([
         init:function (page) {
             var base = this;
             base.page = page;
-//            base.render();
-            base.renderSplit();
+            //            base.render();
+            base.renderCarousel();
 
             base.registerEvents();
         },
@@ -28,30 +27,26 @@ define([
             base.$el.addClass(base.page.class);
             base.$el.attr("data-url", "#" + base.page.urls[base.page.urls.length - 1]);
 
-            var template = _.template(debouchesTemplate, {
+            var template = _.template(faq1Template, {
             });
             base.$el.html(template);
         },
-        renderSplit:function () {
+        renderCarousel:function () {
             var base = this;
             base.$el.css("background", base.page.background);
             base.$el.addClass(base.page.class);
             base.$el.attr("data-url", "#" + base.page.urls[base.page.urls.length - 1]);
 
             var div = $(document.createElement("div"));
-            div.addClass("debouches-container");
+            div.addClass("faq-container");
 
-            var templates_list = [debouchesSplit1, debouchesSplit2];
+            var templates_list = [faqTemplate1, faqTemplate2, faqTemplate3];
+
             base.carousel = new Carousel();
             div.html(base.carousel.$el);
             base.$el.html(div);
             base.carousel.init(templates_list, true, true);
-            base.addHeightPadding();
-        },
-        addHeightPadding:function () {
-            var base = this;
-            var height = base.$el.find(".debouches-container").css("height");
-//            base.carousel.addHeightPadding(height);
+//            base.addHeightPadding();
         },
         registerEvents:function () {
             var base = this;
