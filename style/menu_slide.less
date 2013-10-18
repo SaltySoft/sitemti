@@ -1,0 +1,45 @@
+.menu_slide {
+  height: 100%;
+  .left_menu {
+    width: 225px;
+    height: 100%;
+    float: left;
+
+    .page_title {
+      margin-bottom : 5px;
+      height: 48px;
+      line-height: 48px;
+      padding-left: 10px;
+      text-decoration: none;
+      font-size: 25px;
+      font-family: openSansCondBold;
+      color: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    .menu_button {
+      margin-bottom : 5px;
+      a {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        padding-left: 10px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: openSansCondBold;
+        color: black;
+        background: rgba(255,255,255,0.25);
+        &.selected {
+          background: rgba(255,255,255,0.75);
+          box-shadow: inset 0px 0px 10px rgba(0,0,0,0.75);
+        }
+
+      }
+    }
+  }
+  .menu_slide_content {
+    width: ~"calc(100% - 245px)";
+    margin-left: 245px;
+    height: 100%;
+  }
+}
