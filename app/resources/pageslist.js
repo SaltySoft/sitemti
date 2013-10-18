@@ -22,7 +22,7 @@ define(views,
             urls:[
                 "cours-premier-semestre"
             ],
-            left-menu:true,
+            left_menu:true,
             background:"#e9c500",
             content:"cours/cours-langage-technologies.html"
         },
