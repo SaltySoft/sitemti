@@ -54,6 +54,7 @@ define(views,
             urls:[
                 "cours-second-semestre"
             ],
+            content:"cours/cours-2emeSemestre.html"
             background:"#e9c500"
         },
         {
@@ -93,6 +94,17 @@ define(views,
             class:"projets2",
             urls:[
                 "projets-plic"
+            ],
+            left_menu:true,
+            subpages:[
+                {
+                    name : "Unified",
+                    content : "projets/plic/plic-unified.html"
+                },
+                {
+                    name : "Dastan",
+                    content : "projets/plic/plic-dastan.html"
+                },
             ],
             background:"#e59d01"
         },
