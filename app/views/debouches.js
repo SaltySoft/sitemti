@@ -3,9 +3,9 @@ define([
     'underscore',
     'backbone',
     'carousel',
-    'text!/templates/débouchés/debouchesTemplate.html',
-    'text!/templates/débouchés/debouchesSplit1.html',
-    'text!/templates/débouchés/debouchesSplit2.html'
+    'text!/templates/debouches/debouchesTemplate.html',
+    'text!/templates/debouches/debouchesSplit1.html',
+    'text!/templates/debouches/debouchesSplit2.html'
 ], function ($, _, Backbone, Carousel, debouchesTemplate, debouchesSplit1, debouchesSplit2) {
 
     var View = Backbone.View.extend({
