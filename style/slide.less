@@ -1,32 +1,31 @@
 .slide {
-    -webkit-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-    -ms-transition: all 500ms ease-in-out;
-    -kthtml-transition: all 500ms ease-in-out;
-    overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -kthtml-transition: all 500ms ease-in-out;
+  overflow: hidden;
 
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 
-    width: 940px;
-    height: 700px;
-    height: ~"calc(100% - 50px)";
-    float: left;
-    margin-left: 50px;
+  width: 940px;
+  height: 700px;
+  height: ~"calc(100% - 50px)";
+  float: left;
+  margin-left: 50px; //    background: #601a85; //tmp
 
-//    background: #601a85; //tmp
+  &.active {
+    opacity: 1;
+    cursor: default; //    box-shadow: 0px 0px 20px darkgray;
+  }
+  &.moving { //    box-shadow: 0px 0px 10px black;
+  }
 
-    &.active {
-        opacity: 1;
-        cursor: default; //    box-shadow: 0px 0px 20px darkgray;
-    }
-    &.moving { //    box-shadow: 0px 0px 10px black;
-    }
-
-    .slide-title {
-        font-family: openSansCondBold;
-        padding-bottom: 12px;
-        font-size: 22px;
-    }
+  .slide-title {
+    font-family: openSansCondBold;
+    padding-bottom: 12px;
+    font-size: 22px;
+  }
+  @import "projets/pfee/main.less";
 }
