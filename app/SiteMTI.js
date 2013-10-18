@@ -2,10 +2,11 @@ var apps = [
     'jquery',
     'underscore',
     'backbone',
-    'pageslist'
+    'pageslist',
+    'views/menu_slide'
 ];
 
-define(apps, function ($, _, Backbone, pages_list) {
+define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
     var SiteMTI = {
         boot:function () {
             console.log(Backbone);
@@ -128,8 +129,35 @@ define(apps, function ($, _, Backbone, pages_list) {
                                 }
                             });
                         }
+
+
+
                         $("#slides").css("width", $("#slides").width() + 1040);
                         $("#slides_container").append(div);
+
+                        if (page.left_menu && page.subpages) {
+                            var menu_slide = new MenuSlideView();
+                            div.html(menu_slide.$el);
+                            menu_slide.init(page.name);
+                            (function (page, menu_slide) {
+                                for (var k in page.subpages) {
+                                    var subpage = page.subpages[k];
+                                (function (subpage, menu_slide) {
+                                    $.ajax({
+                                        url:"/templates/" + subpage.content,
+                                        success:function (data, status) {
+                                            var xml = $($.parseHTML(data));
+                                            var content = xml.find('div[id="content"]');
+                                            menu_slide.add_content(subpage.name, content);
+                                            console.log("Added page content", subpage, content);
+                                        }
+                                    });
+                                })(subpage, menu_slide);
+                                }
+                            })(page, menu_slide);
+
+                        }
+
                     }
                 })(page, k);
 
