@@ -230,7 +230,8 @@ define(views,
                 urls: [
                     "events-mtidays"
                 ],
-                background: "#4fa429"
+                background: "#4fa429",
+                content: "evenements/evenements-mtidays.html"
             },
             {
                 name: "FAQ",
