@@ -44,6 +44,7 @@ define([
             var templates_list = [debouchesSplit1, debouchesSplit2];
             base.carousel = new Carousel();
             div.html(base.carousel.$el);
+
             base.$el.html(div);
             base.carousel.init(templates_list, true, true);
             base.addHeightPadding();
