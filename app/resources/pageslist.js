@@ -59,7 +59,18 @@ define(views,
             urls:[
                 "projets-pfee"
             ],
-            background:"#e59d01"
+            background:"#e59d01",
+            left_menu: true,
+            subpages: [
+                {
+                    name: "Présentation",
+                    content: "projets/pfee/presentation.html"
+                },
+                {
+                    name: "Planning",
+                    content: "projets/pfee/planning.html"
+                }
+            ]
         },
         {
             name:"Débouchés",
