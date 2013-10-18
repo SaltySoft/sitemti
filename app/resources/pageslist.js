@@ -16,12 +16,13 @@ define(views,
             content:"presentation/presentation.html"
         },
         {
-            name:"Cours premier semestre",
+            name:"Cours",
             baseclass:"cours",
             class:"cours1",
             urls:[
                 "cours-premier-semestre"
             ],
+            left-menu:true,
             background:"#e9c500",
             content:"cours/cours-langage-technologies.html"
         },
@@ -41,6 +42,28 @@ define(views,
             urls:[
                 "projets-generaux"
             ],
+            subpages : [
+                {name:".NET",
+                    content: "projets/projets1.html"
+                },
+                {
+                    name:"JavaScript",
+                    content:"projets/projets2.html"
+                },
+                {
+                    name:"JEE",
+                    content:"projets/projets3.html"
+                },
+                {
+                    name:"iOS",
+                    content:"projets/projets4.html"
+                },
+                {
+                    name:"Jeux Vidéo",
+                    content : "projets/projets5.html"
+                }
+            ],
+            left_menu:true,
             background:"#e59d01"
         },
         {
