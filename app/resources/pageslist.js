@@ -17,7 +17,7 @@ define(views,
                 content: "presentation/presentation.html"
             },
             {
-                name: "Cours",
+                name: "1er semestre",
                 baseclass: "cours",
                 class: "cours1",
                 urls: [
@@ -49,13 +49,19 @@ define(views,
                 background: "#e9c500"
             },
             {
-                name: "Cours second semestre",
+                name: "2nd semestre",
                 baseclass: "cours",
                 class: "cours2",
                 urls: [
                     "cours-second-semestre"
                 ],
-                content: "cours/cours-2emeSemestre.html",
+                left_menu: true,
+                subpages: [
+                    {
+                        name: "Technologies",
+                        content: "cours/cours-2emeSemestre.html"
+                    }
+                ],
                 background: "#e9c500"
             },
             {
