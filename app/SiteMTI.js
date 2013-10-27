@@ -72,7 +72,28 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                         window.location = $(this).attr("data-url");
                     }
                 });
+
+                $(window).resize(function () {
+                    if (this.resizeTO) {
+                        clearTimeout(this.resizeTO);
+                    }
+                    this.resizeTO = setTimeout(function () {
+                        $(this).trigger('resizeEnd');
+                    }, 400);
+                });
+
+                $(window).bind('resizeEnd', function () {
+                    SiteMTI.html_width = $("html").width();
+                    SiteMTI.slide_width = (pages_list.length * SiteMTI.html_width * 0.06) + 25;
+                    SiteMTI.router.navigate();
+                    SiteMTI.router.navigate(SiteMTI.hash, true);
+                    $("#slides").css("width", pages_list.length * SiteMTI.html_width);
+                });
             };
+
+            SiteMTI.html_width = $("html").width();
+            SiteMTI.slide_width = (pages_list.length * SiteMTI.html_width * 0.06) + 25;
+            $("#slides").css("width", pages_list.length * SiteMTI.html_width);
         },
         init:function () {
             SiteMTI.boot();
@@ -96,11 +117,11 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
 
                             $("#slides_container").stop();
                             $("#slides_container").animate({
-                                left:-(k * 966)
+                                left:-(k * (SiteMTI.slide_width))
                             }, 1000, "swing", function () {
                                 $(".slide").removeClass("moving");
                             });
-                            SiteMTI.hash = null;
+                            SiteMTI.hash = url;
                             SiteMTI.current_offset = k;
                             $(".slide").removeClass("active");
                             $(".slide." + page.class).addClass("active");
@@ -109,8 +130,9 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
 
                     if (page.view) {
                         var view = page.getView();
-                        $("#slides").css("width", $("#slides").width() + 1040);
+//                        $("#slides").css("width", $("#slides").width() + SiteMTI.slide_width);
                         $("#slides_container").append(view.$el);
+                        view.$el.css("left", SiteMTI.slide_width * k);
                         view.init(page);
                     }
                     else {
@@ -118,6 +140,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                         div.css("background", page.background);
                         div.addClass("slide");
                         div.addClass(page.class);
+                        div.css("left", SiteMTI.slide_width * k);
                         div.attr("data-url", "#" + page.urls[page.urls.length - 1]);
                         if (page.content) {
                             $.ajax({
@@ -129,8 +152,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                             });
                         }
 
-
-                        $("#slides").css("width", $("#slides").width() + 1040);
+//                        $("#slides").css("width", $("#slides").width() + SiteMTI.slide_width);
                         $("#slides_container").append(div);
 
                         if (page.left_menu && page.subpages) {
@@ -158,7 +180,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                 })(page, k);
 
             }
-            $("#slides_container").append('<div class="clearer"></div>')
+            $("#slides_container").append('<div class="clearer"></div>');
             Backbone.history.start();
 
             SiteMTI.register_events();

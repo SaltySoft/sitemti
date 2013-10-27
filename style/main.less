@@ -23,15 +23,20 @@ html {
         #container {
             width: 100%;
             height: 100%;
+            position: relative;
 
             #slides {
-                width: 2000px;
-                margin-left: ~"calc(50% - 495px)";
+                width: 2000px; //                margin-left: ~"calc(50% - 495px)";
+            //                margin-left: ~"calc(11% - 5px)";
                 height: ~"calc(100% - @{header-height})";
 
                 #slides_container {
                     height: 100%;
+                    width: 100%;
                     position: relative;
+                    >:first-child { //                        margin-left: ~"calc(2% - 130px)";
+                        margin-left: ~"calc(1% + 25px)";
+                    }
                 }
             }
         }
