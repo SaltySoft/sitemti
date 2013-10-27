@@ -4,37 +4,49 @@
     background-color: #601a85;
     color: white;
 
-    img {
-        height: 100%;
-        width: 100%;
-    }
+    .banner1 {
+        height: 25%;
+        min-height: 205px;
+        display: inline-block;
 
-    .pure-g-r [class *="pure-u"] {
-        height: 100%;
-    }
-    .pure-u-3-5 {
-        width: 56%;
-    }
-    .pure-u-2-5 {
-        width: 44%;
-    }
-    .presentation-banner1 {
-        height: 205px;
         .text-block {
-            padding: 20px 13px 0px 13px;
-            text-align: justify;
-            line-height: 23px;
+            padding: 3%;
+            width: 60%;
 
-            -webkit-hyphens: auto;
-            -moz-hyphens: auto;
-            -ms-hyphens: auto;
-            -o-hyphens: auto;
-            hyphens: auto;
+            strong {
+                font-family: openSansCondBold;
+                font-size: 22px;
+            }
+
+            p {
+                text-align: justify;
+                line-height: 23px;
+                margin-top: 12px;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                -ms-hyphens: auto;
+                -o-hyphens: auto;
+                hyphens: auto;
+            }
+        }
+
+        .presentation-img_container {
+            height: 100%;
+            width: 34%;
+            float: right;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                left: ~"calc(50% - 207px)";
+            }
         }
     }
 
     .presentation-banner2 {
-        height: 105px;
+        height: 12%;
+        min-height: 105px;
 
         .slide-title {
             margin: auto;
