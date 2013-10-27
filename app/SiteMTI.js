@@ -9,7 +9,7 @@ var apps = [
 define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
     var SiteMTI = {
         boot:function () {
-            console.log(Backbone);
+//            console.log(Backbone);
             SiteMTI.header = $("#header");
 
             SiteMTI.Router = Backbone.Router.extend({
@@ -83,7 +83,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                 (function (page, k) {
                     for (var j in page.urls) {
                         var url = page.urls[j];
-                        console.log(url);
+//                        console.log(url);
                         SiteMTI.router.route(url, function () {
                             $("title").html("MTI : " + page.name);
                             SiteMTI.header.find(".active").removeClass("active");
@@ -147,7 +147,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                                                 var xml = $($.parseHTML(data));
                                                 var content = xml.find('div[id="content"]');
                                                 menu_slide.add_content(subpage.name, content);
-                                                console.log("Added page content", subpage, content);
+//                                                console.log("Added page content", subpage, content);
                                             }
                                         });
                                     })(subpage, menu_slide);

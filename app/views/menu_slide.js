@@ -31,7 +31,7 @@ define([
             base.$el.find(".menu_list").append(button);
             if (base.content.length == 1) {
                 base.$el.find(".menu_slide_content").html(base.content[0]);
-                console.log(base.content);
+//                console.log(base.content);
                 button.find("a").addClass("selected");
                 Hyphenator.run();
             }
@@ -50,7 +50,7 @@ define([
                 base.$el.find(".selected").removeClass("selected");
                 elt.addClass("selected");
                 base.$el.find(".menu_slide_content").html(base.content[elt.parent().attr("data-index")]);
-                console.log(elt.parent().attr("data-index"), base.content);
+//                console.log(elt.parent().attr("data-index"), base.content);
                 Hyphenator.run();
             });
         }

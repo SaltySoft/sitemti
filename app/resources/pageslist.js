@@ -171,7 +171,7 @@ define(views,
                     },
                     {
                         name:"Alerte Allergies",
-                        content:"projets/pfee/alerte_allergies.html"
+                        content:"projets/pfee/alert_allergies.html"
                     },
                     {
                         name:"OptiConso",
