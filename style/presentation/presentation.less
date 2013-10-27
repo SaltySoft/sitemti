@@ -1,35 +1,49 @@
-.presentation-container {
-    height: 100%;
-    width: 100%;
-    background-color: #601a85;
-    color: white;
-
-    img {
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+    .presentation-container {
         height: 100%;
         width: 100%;
+        background-color: #601a85;
+        color: white;
     }
 
-    .pure-g-r [class *="pure-u"] {
-        height: 100%;
-    }
-    .pure-u-3-5 {
-        width: 56%;
-    }
-    .pure-u-2-5 {
-        width: 44%;
-    }
     .presentation-banner1 {
-        height: 205px;
-        .text-block {
-            padding: 20px 13px 0px 13px;
-            text-align: justify;
-            line-height: 23px;
+        height: 25%;
+        min-height: 205px;
+        display: inline-block;
 
-            -webkit-hyphens: auto;
-            -moz-hyphens: auto;
-            -ms-hyphens: auto;
-            -o-hyphens: auto;
-            hyphens: auto;
+        .text-block {
+            padding: 3%;
+            width: 60%;
+
+            strong {
+                font-family: openSansCondBold;
+                padding-bottom: 12px;
+                font-size: 22px;
+            }
+
+            p {
+                text-align: justify;
+                line-height: 23px;
+
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                -ms-hyphens: auto;
+                -o-hyphens: auto;
+                hyphens: auto;
+            }
+        }
+
+        .presentation-img_container {
+            height: 100%;
+            width: 34%;
+            float: right;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                left: ~"calc(50% - 207px)";
+            }
         }
     }
 
@@ -53,10 +67,18 @@
         .block3 {
             background-color: #773c97;
         }
+        .presentation-img_container {
+            height: 100%;
+            overflow: hidden;
+        }
     }
 
     .presentation-banner3 {
         height: 210px;
+        .presentation-img_container {
+            height: 100%;
+            overflow: hidden;
+        }
     }
 
     .presentation-banner4 {
@@ -76,10 +98,10 @@
                 margin-bottom: 45px;
             }
         }
-    }
 
-    .presentation-img_container {
-        height: 100%;
-        overflow: hidden;
+        .presentation-img_container {
+            height: 100%;
+            overflow: hidden;
+        }
     }
 }
