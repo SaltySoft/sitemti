@@ -96,7 +96,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
 
                             $("#slides_container").stop();
                             $("#slides_container").animate({
-                                left:-(k * 990)
+                                left:-(k * 966)
                             }, 1000, "swing", function () {
                                 $(".slide").removeClass("moving");
                             });
