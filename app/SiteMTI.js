@@ -72,6 +72,19 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                         window.location = $(this).attr("data-url");
                     }
                 });
+
+                $(window).resize(function () {
+                    if (this.resizeTO) {
+                        clearTimeout(this.resizeTO);
+                    }
+                    this.resizeTO = setTimeout(function () {
+                        $(this).trigger('resizeEnd');
+                    }, 400);
+                });
+
+                $(window).bind('resizeEnd', function () {
+                    //resizing stuff
+                });
             };
         },
         init:function () {
@@ -100,7 +113,7 @@ define(apps, function ($, _, Backbone, pages_list, MenuSlideView) {
                             }, 1000, "swing", function () {
                                 $(".slide").removeClass("moving");
                             });
-                            SiteMTI.hash = null;
+                            SiteMTI.hash = url;
                             SiteMTI.current_offset = k;
                             $(".slide").removeClass("active");
                             $(".slide." + page.class).addClass("active");
