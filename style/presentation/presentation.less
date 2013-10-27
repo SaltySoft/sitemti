@@ -6,7 +6,7 @@
         color: white;
     }
 
-    .presentation-banner1 {
+    .banner1 {
         height: 25%;
         min-height: 205px;
         display: inline-block;
@@ -17,14 +17,13 @@
 
             strong {
                 font-family: openSansCondBold;
-                padding-bottom: 12px;
                 font-size: 22px;
             }
 
             p {
                 text-align: justify;
                 line-height: 23px;
-
+                margin-top: 12px;
                 -webkit-hyphens: auto;
                 -moz-hyphens: auto;
                 -ms-hyphens: auto;
@@ -47,10 +46,12 @@
         }
     }
 
-    .presentation-banner2 {
-        height: 105px;
+    .banner2 {
+        height: 12%;
+        min-height: 105px;
 
-        .slide-title {
+        strong {
+            font-family: openSansCondBold;
             margin: auto;
             text-align: center;
             margin-top: 18px;
@@ -58,15 +59,19 @@
             font-size: 24px;
         }
 
-        .block1 {
+        div:nth-child(1) {
             background-color: #af8cc1;
+            width: 33.33%;
         }
-        .block2 {
+        div:nth-child(2) {
             background-color: #9465ad;
+            width: 33.33%;
         }
-        .block3 {
+        div:nth-child(3) {
             background-color: #773c97;
+            width: 33.33%;
         }
+
         .presentation-img_container {
             height: 100%;
             overflow: hidden;
