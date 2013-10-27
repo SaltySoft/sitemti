@@ -1,42 +1,43 @@
 .slide {
-  -webkit-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -kthtml-transition: all 500ms ease-in-out;
-  overflow: hidden;
+    -webkit-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -kthtml-transition: all 500ms ease-in-out;
+    overflow: hidden;
 
-  opacity: 0.7;
-  cursor: pointer;
+    opacity: 0.7;
+    cursor: pointer;
 
-  width: 940px;
+    width: 940px;
 
-  height: ~"calc(100% - 15px)";
-  float: left;
-  margin-left: 50px; //    background: #601a85; //tmp
-  max-height: 826px;
-  &.active {
-    opacity: 1;
-    cursor: default; //    box-shadow: 0px 0px 20px darkgray;
-  }
-  &.moving { //    box-shadow: 0px 0px 10px black;
-  }
+    float: left;
+    margin-left: 26px;
+    height: ~"calc(100% - 15px)";
+    max-height: 826px;
 
-  #content {
-    height: 100%;
-  }
+    &.active {
+        opacity: 1;
+        cursor: default; //    box-shadow: 0px 0px 20px darkgray;
+    }
+    &.moving { //    box-shadow: 0px 0px 10px black;
+    }
 
-  .slide-title {
-    font-family: openSansCondBold;
-    padding-bottom: 12px;
-    font-size: 22px;
-  }
-  @import "projets/pfee/main.less";
-  @import "projets/projects_main";
+    #content {
+        height: 100%;
+    }
 
-  @import "menu_slide";
-  @import "projets/plic/main";
-  @import "cours/main";
-  @import "profs/profs";
-  @import "evenements/evenements";
+    .slide-title {
+        font-family: openSansCondBold;
+        padding-bottom: 12px;
+        font-size: 22px;
+    }
+@import "projets/pfee/main.less";
+@import "projets/projects_main";
+
+@import "menu_slide";
+@import "projets/plic/main";
+@import "cours/main";
+@import "profs/profs";
+@import "evenements/evenements";
 }
