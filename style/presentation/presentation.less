@@ -86,8 +86,8 @@
             -o-hyphens: auto;
             hyphens: auto;
 
-            .presentation-content {
-                margin-bottom: 45px;
+            .presentation-content { //                margin-bottom: 45px;
+                margin-bottom: 8%;
             }
         }
 
@@ -110,7 +110,26 @@
     }
 }
 
-@media screen and (min-height: 1024px) {
+@media screen and (min-height: 851px) and (max-height: 1022px) {
+    .presentation-container {
+        .banner1 {
+            min-height: 205px;
+            .text-block {
+                padding: 3%;
+                width: 60%;
+            }
+        }
+        .presentation-banner4 {
+            .pure-u-2-5 {
+                .text-block {
+                    padding: 4%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 1023px) {
     .presentation-container {
         .banner1 {
             min-height: 205px;
@@ -122,7 +141,8 @@
     }
 }
 
-@media screen and (max-height: 1023px) and (min-height: 750px) {
+
+@media screen and (max-height: 850px) and (min-height: 750px) {
     .presentation-container {
         .banner1 {
             height: ~"calc(56% - 155px)";
