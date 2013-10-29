@@ -1,6 +1,7 @@
 
 
 .pfee_presentation {
+  position: relative;
   .presentation_text {
     margin-top:15px;
     margin-left: 10px;
@@ -32,5 +33,41 @@
 
     height: 404px;
     background: url(/resources/images/projets/pfee/pfee_pres_botom.png);
+  }
+
+
+  @media(max-height: 555px) {
+    .presentation_text {
+      width: 100%;
+    }
+
+    .right_image {
+      display: none;
+    }
+    .bottom_image {
+      top: 200px;
+      width: 100%;
+      position: absolute;
+    }
+  }
+
+  @media(max-height: 768px) and (min-height: 555px) {
+    .presentation_text {
+      width: 60%;
+    }
+
+    .right_image {
+      width: 40%;
+      margin: 0;
+      right: 0px;
+      position: absolute;
+      height: 300px;
+    }
+    .bottom_image {
+      top: 300px;
+      width: 100%;
+      position: absolute;
+
+    }
   }
 }
