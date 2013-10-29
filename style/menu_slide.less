@@ -6,19 +6,19 @@
     float: left;
 
     .page_title {
-      margin-bottom : 5px;
+      margin-bottom: 5px;
       height: 48px;
       line-height: 48px;
       padding-left: 10px;
       text-decoration: none;
       font-size: 25px;
       font-family: openSansCondBold;
-      color: rgba(0,0,0,0.5);
+      color: rgba(0, 0, 0, 0.5);
       text-align: center;
     }
 
     .menu_button {
-      margin-bottom : 5px;
+      margin-bottom: 5px;
       a {
         display: block;
         height: 48px;
@@ -28,12 +28,39 @@
         font-size: 17px;
         font-family: openSansCondBold;
         color: black;
-        background: rgba(255,255,255,0.25);
-        &.selected {
-          background: rgba(255,255,255,0.75);
-          box-shadow: inset 0px 0px 10px rgba(0,0,0,0.75);
+        background: rgba(255, 255, 255, 0.25);
+
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.6);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
 
+        &.selected {
+          background: rgba(255, 255, 255, 0.75);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.75);
+        }
+
+      }
+
+    }
+    @media (max-height: 600px) {
+      .menu_button {
+        a {
+          font-size: 15px;
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    @media (max-height: 800px) and (min-height: 600px) {
+      .menu_button {
+        a {
+          font-size: 15px;
+          height: 30px;
+          line-height: 30px;
+        }
       }
     }
   }
@@ -42,4 +69,5 @@
     margin-left: 245px;
     height: 100%;
   }
+
 }
