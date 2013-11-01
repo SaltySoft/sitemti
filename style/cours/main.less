@@ -54,73 +54,78 @@
         }
 
         img {
-            width: 90%;
-            height: 90%;
-            padding: 5%;
+            width: 95%;
+            height: 95%;
+            padding: 2%;
         }
     }
 
-@media (max-height: 768px)and (min-height: 658px) {
-    .matter {
-        float: left;
-        width: 50%;
-        text-align: center;
-        height: 130px;
-        .matter-image {
-            width: ~"calc(100% - 5px)";
-            width: 60px;
-            height: 60px;
-            float: none;
-            margin: auto;
-            img {
-                width: 90%;
-                height: 90%;
-                padding: 5%;
-            }
-        }
-        .matter-description {
-            display: none;
-        }
+    .matter-description {
+        margin-top: 5px;
+    }
+}
 
-        .matter-texts {
-            float: none;
-            width: 75%;
-            margin: auto;
-            padding: 0;
-        }
-        .matter-title {
-            font-size: 16px;
+@media (max-height: 768px)and (min-height: 658px) {
+    .cours {
+        .matter {
+            float: left;
+            width: 50%;
             text-align: center;
-            width: ~"calc(100% - 10px)";
-            line-height: 25px;
+            height: 130px;
+            .matter-image {
+                width: ~"calc(100% - 5px)";
+                width: 60px;
+                height: 60px;
+                float: none;
+                margin: auto;
+            }
+            .matter-description {
+                display: none;
+            }
+
+            .matter-texts {
+                float: none;
+                width: 75%;
+                margin: auto;
+                padding: 0;
+            }
+            .matter-title {
+                font-size: 16px;
+                text-align: center;
+                width: ~"calc(100% - 10px)";
+                line-height: 25px;
+            }
         }
     }
 }
 
 @media (max-height: 658px) {
-    .matter {
-        float: left;
-        width: 50%;
+    .cours {
+        .matter {
+            float: left;
+            width: 50%;
 
-        .matter-image {
+            .matter-image {
 
-        }
-        .matter-description {
-            display: none;
-        }
+            }
+            .matter-description {
+                display: none;
+            }
 
-        .matter-title {
-            font-size: 16px;
-            text-align: center;
-            width: ~"calc(100% - 10px)";
-            line-height: 25px;
+            .matter-title {
+                font-size: 16px;
+                text-align: center;
+                width: ~"calc(100% - 10px)";
+                line-height: 25px;
+            }
         }
     }
 }
 
 @media (min-height: 900px) {
-    .matter {
-        margin-bottom: 30px;
+    .cours {
+        .matter {
+            margin-bottom: 30px;
+        }
     }
-}
 }
