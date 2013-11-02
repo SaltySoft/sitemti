@@ -1,22 +1,82 @@
+@media screen and (max-height: 700px) {
+    .debouches-container {
+        .debouches-careers {
+            .responsive-container {
+                margin: 3%;
+            }
+            .debouches-inner_content {
+                padding-bottom: 10px;
+            }
+        }
+        .debouches-employers {
+            .responsive-container {
+                margin: 6%;
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 701px) {
+    .debouches-container {
+        .debouches-careers {
+            .responsive-container {
+                margin: 6%;
+            }
+        }
+        .debouches-employers {
+            .responsive-container {
+                margin: 10%;
+            }
+        }
+    }
+}
+
 .debouches-container {
     height: 100%;
     width: 100%;
     background-color: rgb(5, 115, 252);
 
+    .carousel {
+        .debouches-careers {
+            margin-top: ~"calc(47% - 420px)";
+            height: 100%;
+            .responsive-container {
+                margin: 12%;
+            }
+            .debouches-careers-img_container {
+                height: 90%;
+            }
+        }
+        .debouches-employers {
+            height: 100%;
+            .debouches-employers-texts {
+                .responsive-container {
+                    margin-top: 25%;
+                    margin-left: 15%;
+                }
+            }
+        }
+    }
+
     .debouches-careers {
         width: 100%;
         color: white;
         display: inline-block;
-        margin-top: 3%;
+        height: 50%;
+
         .debouches-careers-texts {
             display: inline-block;
-            padding-left: 50px;
-            padding-top: 36px;
+            width: 44.5%;
+            height: 100%;
+
         }
 
         .debouches-careers-img_container {
             display: inline-block;
             float: right;
+            height: 100%;
+            width: 55%;
+            overflow: hidden;
         }
     }
 
@@ -24,17 +84,27 @@
         width: 100%;
         color: white;
         display: inline-block;
-        margin-top: 3%;
+        height: 50%;
+
         .debouches-employers-texts {
             display: inline-block;
             float: left;
-            padding-left: 50px;
-            padding-top: 80px;
+            width: 44%;
+            height: 100%;
         }
 
         .debouches-careers-img_container {
             display: inline-block;
             float: left;
+            height: 100%;
+            width: 55.3%;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            img {
+                position: absolute;
+                top: ~"calc(50% - 202px)";
+            }
         }
     }
 

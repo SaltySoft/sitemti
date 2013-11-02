@@ -105,6 +105,10 @@ define(views,
                 left_menu:true,
                 subpages:[
                     {
+                        name:"SmartBlocks",
+                        content:"projets/plic/plic-smartblocks.html"
+                    },
+                    {
                         name:"Unified",
                         content:"projets/plic/plic-unified.html"
                     },

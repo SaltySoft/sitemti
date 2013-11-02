@@ -17,8 +17,15 @@ define([
         init:function (page) {
             var base = this;
             base.page = page;
-//            base.render();
-            base.renderSplit();
+
+            console.log("hauteur carousel", base.$el.height());
+            if (base.$el.height() < 600) {
+                base.renderSplit();
+            }
+            else {
+                base.render();
+            }
+
 
             base.registerEvents();
         },
@@ -56,6 +63,26 @@ define([
         },
         registerEvents:function () {
             var base = this;
+
+            $(window).resize(function () {
+                if (this.resizeTO) {
+                    clearTimeout(this.resizeTO);
+                }
+                this.resizeTO = setTimeout(function () {
+                    $(this).trigger('resizeEnd');
+                }, 400);
+            });
+
+            $(window).bind('resizeEnd', function () {
+                //resizing stuff
+                console.log("hauteur carousel", base.$el.height());
+                if (base.$el.height() < 600) {
+                    base.renderSplit();
+                }
+                else {
+                    base.render();
+                }
+            });
         }
     });
 
