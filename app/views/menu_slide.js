@@ -5,20 +5,26 @@ define([
     'text!/templates/menu_slide/menu_slide.html'
 ], function ($, _, Backbone, menu_slide_tpl) {
     var View = Backbone.View.extend({
-        tagName: "div",
-        className: "menu_slide",
-        initialize: function () {
+        tagName:"div",
+        className:"menu_slide",
+        initialize:function () {
             var base = this;
             base.content = [];
         },
-        init: function (page_title) {
+        init:function (page_title) {
             var base = this;
 
             base.render();
             base.$el.find(".page_title").html(page_title);
+
+            if (page_title == "PLIC") {
+                base.$el.find(".left_menu").width(160);
+                base.$el.find(".menu_slide_content").css("width", "calc(100% - 160px)");
+                base.$el.find(".menu_slide_content").css("margin-left", "188px");
+            }
             base.registerEvents();
         },
-        add_content: function(name, content) {
+        add_content:function (name, content) {
             var base = this;
 
             base.content.push(content[0]);
@@ -36,13 +42,13 @@ define([
                 Hyphenator.run();
             }
         },
-        render: function () {
+        render:function () {
             var base = this;
 
             var template = _.template(menu_slide_tpl, {});
             base.$el.html(template);
         },
-        registerEvents: function () {
+        registerEvents:function () {
             var base = this;
 
             base.$el.delegate(".menu_button a", "click", function () {

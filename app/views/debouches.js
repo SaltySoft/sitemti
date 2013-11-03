@@ -19,7 +19,7 @@ define([
             base.page = page;
 
             console.log("hauteur carousel", base.$el.height());
-            if (base.$el.height() < 600) {
+            if (base.$el.height() < 650) {
                 base.renderSplit();
             }
             else {
@@ -65,18 +65,18 @@ define([
             var base = this;
 
             $(window).resize(function () {
-                if (this.resizeTO) {
-                    clearTimeout(this.resizeTO);
+                if (base.resizeTO) {
+                    clearTimeout(base.resizeTO);
                 }
-                this.resizeTO = setTimeout(function () {
-                    $(this).trigger('resizeEnd');
+                base.resizeTO = setTimeout(function () {
+                    base.trigger('resizeDebouchesEnd');
                 }, 400);
             });
 
-            $(window).bind('resizeEnd', function () {
+            base.bind('resizeDebouchesEnd', function () {
                 //resizing stuff
                 console.log("hauteur carousel", base.$el.height());
-                if (base.$el.height() < 600) {
+                if (base.$el.height() < 650) {
                     base.renderSplit();
                 }
                 else {
