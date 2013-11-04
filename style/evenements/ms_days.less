@@ -11,38 +11,110 @@
         text-align: justify;
     }
 
-    .evenements-img_container1 {
-        width: 44.55555%;
+    .evenements-msday-banner1 {
         height: 49%;
-        overflow: hidden;
-    }
+        min-height: 240px;
 
-    .evenements-img_container2 {
+        .evenements-img_container {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            width: 415px;
+            display: inline-block;
+            float: left;
+
+            img {
+                position: absolute;
+                top: ~"calc(50% - 205px)";
+            }
+        }
+        .evenements-content-container {
+            padding: 2%;
+            padding-left: ~"calc(2% + 415px)";
+
+            .description {
+                >p {
+                    padding-top: 15px;
+                }
+                p {
+                    padding-bottom: 15px;
+                }
+            }
+        }
+    }
+    .evenements-msday-banner2 {
         height: 51%;
         width: 100%;
-        overflow: hidden;
+        .evenements-img_container {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            img {
+                position: absolute;
+                top: ~"calc(50% - 210px)";
+            }
+        }
     }
+}
 
-    .description {
-        float: right;
-        width: ~'calc(55.55555% - 92px)';
-        height: ~'calc(49% - 50px)';
-        line-height: 20px;
-        padding-top: 50px;
-        padding-left: 50px;
-        padding-right: 40px;
-        >p {
-            padding-top: 15px;
-        }
-        p {
-            padding-bottom: 15px;
+@media (min-height: 900px) {
+    .evenements-msday-container {
+        .evenements-msday-banner1 {
+            .evenements-content-container {
+                padding: 4%;
+                padding-left: ~"calc(4% + 415px)";
+                line-height: 23px;
+                .description {
+                }
+            }
         }
     }
-  
-  @media (max-height: 768px) {
-    .description {
-      line-height: 18px;
-      padding-top: 20px;
+}
+
+@media (min-height: 768px) and (max-height: 900px) {
+    .evenements-msday-container {
+        .evenements-msday-banner1 {
+            .evenements-content-container {
+                padding: 3%;
+                padding-left: ~"calc(3% + 415px)";
+                line-height: 21px;
+                .description {
+                }
+            }
+        }
     }
-  }
+}
+
+@media (max-height: 768px) {
+    .evenements-msday-container {
+        .evenements-msday-banner1 {
+            min-height: 230px;
+            .evenements-content-container {
+                padding: 1%;
+                padding-left: ~"calc(2% + 415px)";
+                .description {
+                    line-height: 18px;
+                    padding-top: 2%;
+                    >p {
+                        padding-top: 10px;
+                    }
+                    p {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 550px) {
+    .evenements-msday-container {
+        .evenements-msday-banner1 {
+            .evenements-content-container {
+                .description {
+                    padding-top: 3px;
+                }
+            }
+        }
+    }
 }
