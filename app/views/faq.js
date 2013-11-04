@@ -53,8 +53,9 @@ define([
                     if (counter == 1) {
                         var faq_template = _.template(faqTemplate, {
                         });
-                        $(faq_template).find(".faq-column1").html(elt.html());
-                        templates_list.push(faq_template);
+                        var tpl = $(faq_template);
+                        tpl.find(".faq-column1").html(elt.html());
+                        templates_list.push(tpl);
                         counter++;
                     }
                     if (counter == 2) {
