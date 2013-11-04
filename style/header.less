@@ -3,176 +3,176 @@
 @header-active-top: -176px;
 
 #header {
-  margin: auto;
-  height: @header-height;
-  width: @site-width; //background: url(/resources/topmenusprite.png) 20px 30px;
-
-  #logo {
-    float: left;
-    display: block;
-    width: 216px;
+    margin: auto;
     height: @header-height;
-    background: url(/resources/topmenusprite.png) 0 @header-normal-top no-repeat;
-
-    &:hover {
-      background: url(/resources/topmenusprite.png) 0 @header-hover-top no-repeat;
-    }
-  }
-
-  .text {
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 9px;
-    clear: left;
-    display: block;
-    text-align: center;
-    &.active {
-      color: white;
-    }
-  }
-
-  li {
-    float: left;
+    width: @site-width; //background: url(/resources/topmenusprite.png) 20px 30px;
 
     a {
-      position: relative;
-      display: block;
-      height: 87px;
-      float: left;
-
-      &.presentation {
-        width: 87px;
-        background: url(/resources/topmenusprite.png) -216px @header-normal-top;
-        &:hover {
-          background: url(/resources/topmenusprite.png) -216px @header-hover-top;
-        }
-        &.active {
-          background-position: -216px @header-active-top;
-        }
-      }
-
-      &.cours1 {
-        width: 78px;
-        background: url(/resources/topmenusprite.png) -303px @header-normal-top;
-        &:hover {
-          background: url(/resources/topmenusprite.png) -303px @header-hover-top;
-        }
-        &.active {
-          background-position: -303px @header-active-top;
-        }
-      }
-
-      &.cours2 {
-        width: 32px;
-        background: url(/resources/topmenusprite.png) -381px @header-normal-top;
-        &:hover {
-          background: url(/resources/topmenusprite.png) -381px @header-hover-top;
-          &.active {
-            background-position: -381px @header-active-top;
-          }
-        }
-      }
-
-        &.projets1 {
-          width: 60px;
-          background: url(/resources/topmenusprite.png) -413px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -413px @header-hover-top;
-          }
-          &.active {
-            background-position: -413px @header-active-top;
-          }
-        }
-        &.projets2 {
-          width: 47px;
-          background: url(/resources/topmenusprite.png) -473px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -473px @header-hover-top;
-          }
-          &.active {
-            background-position: -473px @header-active-top;
-          }
-        }
-
-        &.projets3 {
-          width: 55px;
-          background: url(/resources/topmenusprite.png) -520px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -520px @header-hover-top;
-          }
-          &.active {
-            background-position: -520px @header-active-top;
-          }
-        }
-
-        &.debouches {
-          width: 91px;
-          background: url(/resources/topmenusprite.png) -575px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -575px @header-hover-top;
-          }
-          &.active {
-            background-position: -575px @header-active-top;
-          }
-        }
-
-        &.profs {
-          width: 99px;
-          background: url(/resources/topmenusprite.png) -665px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -665px @header-hover-top;
-          }
-          &.active {
-            background-position: -665px @header-active-top;
-          }
-        }
-
-        &.events1 {
-          width: 57px;
-          background: url(/resources/topmenusprite.png) -763px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -763px @header-hover-top;
-          }
-          &.active {
-            background-position: -763px @header-active-top;
-          }
-        }
-
-        &.events2 {
-          width: 34px;
-          background: url(/resources/topmenusprite.png) -820px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -820px @header-hover-top;
-          }
-          &.active {
-            background-position: -820px @header-active-top;
-          }
-        }
-
-        &.events3 {
-          width: 45px;
-          background: url(/resources/topmenusprite.png) -854px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -854px @header-hover-top;
-          }
-          &.active {
-            background-position: -854px @header-active-top;
-          }
-        }
-
-        &.faq {
-          width: 78px;
-          background: url(/resources/topmenusprite.png) -898px @header-normal-top;
-          &:hover {
-            background: url(/resources/topmenusprite.png) -898px @header-hover-top;
-          }
-          &.active {
-            background-position: -898px @header-active-top;
-          }
-        }
-
-
-
+        outline: 0;
     }
 
-  }
+    #logo {
+        float: left;
+        display: block;
+        width: 216px;
+        height: @header-height;
+        background: url(/resources/topmenusprite.png) 0 @header-normal-top no-repeat;
+
+        &:hover {
+            background: url(/resources/topmenusprite.png) 0 @header-hover-top no-repeat;
+        }
+    }
+
+    .text {
+        color: rgba(255, 255, 255, 0.1);
+        font-size: 9px;
+        clear: left;
+        display: block;
+        text-align: center;
+        &.active {
+            color: white;
+        }
+    }
+
+    li {
+        float: left;
+
+        a {
+            position: relative;
+            display: block;
+            height: 87px;
+            float: left;
+
+            &.presentation {
+                width: 87px;
+                background: url(/resources/topmenusprite.png) -216px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -216px @header-hover-top;
+                }
+                &.active {
+                    background-position: -216px @header-active-top;
+                }
+            }
+
+            &.cours1 {
+                width: 78px;
+                background: url(/resources/topmenusprite.png) -303px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -303px @header-hover-top;
+                }
+                &.active {
+                    background-position: -303px @header-active-top;
+                }
+            }
+
+            &.cours2 {
+                width: 32px;
+                background: url(/resources/topmenusprite.png) -381px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -381px @header-hover-top;
+                }
+                &.active {
+                    background-position: -381px @header-active-top;
+                }
+            }
+
+            &.projets1 {
+                width: 60px;
+                background: url(/resources/topmenusprite.png) -413px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -413px @header-hover-top;
+                }
+                &.active {
+                    background-position: -413px @header-active-top;
+                }
+            }
+            &.projets2 {
+                width: 47px;
+                background: url(/resources/topmenusprite.png) -473px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -473px @header-hover-top;
+                }
+                &.active {
+                    background-position: -473px @header-active-top;
+                }
+            }
+
+            &.projets3 {
+                width: 55px;
+                background: url(/resources/topmenusprite.png) -520px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -520px @header-hover-top;
+                }
+                &.active {
+                    background-position: -520px @header-active-top;
+                }
+            }
+
+            &.debouches {
+                width: 91px;
+                background: url(/resources/topmenusprite.png) -575px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -575px @header-hover-top;
+                }
+                &.active {
+                    background-position: -575px @header-active-top;
+                }
+            }
+
+            &.profs {
+                width: 99px;
+                background: url(/resources/topmenusprite.png) -665px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -665px @header-hover-top;
+                }
+                &.active {
+                    background-position: -665px @header-active-top;
+                }
+            }
+
+            &.events1 {
+                width: 57px;
+                background: url(/resources/topmenusprite.png) -763px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -763px @header-hover-top;
+                }
+                &.active {
+                    background-position: -763px @header-active-top;
+                }
+            }
+
+            &.events2 {
+                width: 34px;
+                background: url(/resources/topmenusprite.png) -820px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -820px @header-hover-top;
+                }
+                &.active {
+                    background-position: -820px @header-active-top;
+                }
+            }
+
+            &.events3 {
+                width: 45px;
+                background: url(/resources/topmenusprite.png) -854px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -854px @header-hover-top;
+                }
+                &.active {
+                    background-position: -854px @header-active-top;
+                }
+            }
+
+            &.faq {
+                width: 78px;
+                background: url(/resources/topmenusprite.png) -898px @header-normal-top;
+                &:hover {
+                    background: url(/resources/topmenusprite.png) -898px @header-hover-top;
+                }
+                &.active {
+                    background-position: -898px @header-active-top;
+                }
+            }
+        }
+    }
 }

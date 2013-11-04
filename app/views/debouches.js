@@ -69,7 +69,7 @@ define([
 
             base.bind('resizeDebouchesEnd', function () {
                 //resizing stuff
-                console.log("hauteur carousel", base.$el.height());
+//                console.log("hauteur carousel", base.$el.height());
                 if (base.$el.height() < 650) {
                     base.renderSplit();
                 }
