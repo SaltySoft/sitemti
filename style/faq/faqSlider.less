@@ -7,10 +7,7 @@
     .pure-g-r {
         height: 100%;
     }
-    .pure-u-1-2 {
-        height: 100%;
-        padding-top: 20px;
-    }
+
     .faq-question-container {
         padding-left: 50px;
         padding-bottom: 0px;
@@ -35,8 +32,22 @@
         }
     }
 
-    .faq-column2 { //        padding-top: 200px;
-        padding-top: 21%;
+    &.two-elements {
+        .pure-u-1-2 {
+            height: 100%;
+        }
+        .faq-question-container {
+            padding-top: 13%;
+        }
+    }
+    &.three-elements {
+        .pure-u-1-2 {
+            height: 100%;
+            padding-top: 20px;
+        }
+
+        .faq-column2 {
+            padding-top: 21%;
+        }
     }
 }
-
