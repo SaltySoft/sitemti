@@ -51,6 +51,7 @@ define([
                 });
                 var faq_items_list = $(faqItems).find(".faq-question-container");
                 console.log("faq_items_list", faq_items_list);
+                var counter = 1;
                 for (var k in faq_items_list) {
                     if (counter == 1) {
                         faq_template.find(".faq-column1").html(faq_items_list[k].html());
