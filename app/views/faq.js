@@ -46,31 +46,32 @@ define([
                 div.addClass("faq-container");
                 div.addClass("two-elements");
                 console.log("LESS THAN 650");
-                $(faqItems).children('.faq-question-container').each(function () {
-                    console.log("this");
-                });
-                var faq_items_list = $(faqItems).find(".faq-question-container");
-                console.log("faq_items_list", faq_items_list);
+                var elt = $('<div>' + faqItems + '</div>').filter(".faq-question-container");
                 var counter = 1;
-                for (var k in faq_items_list) {
+                elt.each(function () {
+                    var elt = $(this);
                     if (counter == 1) {
-                        faq_template.find(".faq-column1").html(faq_items_list[k].html());
-                        var template = _.template(faq_template, {
+                        var faq_template = _.template(faqTemplate, {
                         });
-                        templates_list.push(template);
+                        $(faq_template).find(".faq-column1").html(elt.html());
+                        templates_list.push(faq_template);
                         counter++;
                     }
                     if (counter == 2) {
-                        $(templates_list[templates_list.length - 1]).find(".faq-column2").html(faq_items_list[k].html());
+                        $(templates_list[templates_list.length - 1]).find(".faq-column2").html(elt.html());
                         counter = 1;
                     }
-                }
+                });
             }
             else {
                 div.addClass("faq-container");
                 div.addClass("three-elements");
                 templates_list = [faqTemplate1, faqTemplate2, faqTemplate3];
             }
+
+            console.log("templates_list1", templates_list);
+            var templates_list2 = [faqTemplate1, faqTemplate2, faqTemplate3];
+            console.log("templates_list2", templates_list2);
 
             base.carousel = new Carousel();
             div.html(base.carousel.$el);
