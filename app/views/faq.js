@@ -46,24 +46,25 @@ define([
                 div.addClass("faq-container");
                 div.addClass("two-elements");
                 console.log("LESS THAN 650");
-                $(faqItems).children('.faq-question-container').each(function () {
-                    console.log("this");
+                var elt = $('<div>' + faqItems+ '</div>').filter(".faq-question-container");
+                elt.each(function () {
+                    console.log("this", $(this).html());
                 });
                 var faq_items_list = $(faqItems).find(".faq-question-container");
                 console.log("faq_items_list", faq_items_list);
-                for (var k in faq_items_list) {
-                    if (counter == 1) {
-                        faq_template.find(".faq-column1").html(faq_items_list[k].html());
-                        var template = _.template(faq_template, {
-                        });
-                        templates_list.push(template);
-                        counter++;
-                    }
-                    if (counter == 2) {
-                        $(templates_list[templates_list.length - 1]).find(".faq-column2").html(faq_items_list[k].html());
-                        counter = 1;
-                    }
-                }
+//                for (var k in faq_items_list) {
+//                    if (counter == 1) {
+//                        faq_template.find(".faq-column1").html(faq_items_list[k].html());
+//                        var template = _.template(faq_template, {
+//                        });
+//                        templates_list.push(template);
+//                        counter++;
+//                    }
+//                    if (counter == 2) {
+//                        $(templates_list[templates_list.length - 1]).find(".faq-column2").html(faq_items_list[k].html());
+//                        counter = 1;
+//                    }
+//                }
             }
             else {
                 div.addClass("faq-container");
