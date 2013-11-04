@@ -79,31 +79,31 @@ define([
             }
         },
         addHeightPadding:function (height) {
-            console.log("addHeightPadding ", height);
-            var base = this;
-            var cic = base.$el.find(".carousel-inner-content");
-            var items = $(cic).children();
-            items.each(function () {
-                var elt = $(this);
-                var firstChild = elt.children(":first");
-                console.log("firstChild", firstChild);
-                if (firstChild) {
-                    var firstChild_height = parseInt(firstChild.css("height"), 10);
-                    console.log("firstChild_height", firstChild_height);
-                    console.log("firstChild $ ", $(firstChild));
-                    var paddingTop = (parseInt(height, 10) - firstChild_height) / 2;
-                    console.log("paddingTop", paddingTop);
-                    elt.css("padding-top", paddingTop + "px");
-                }
-            });
+//            console.log("addHeightPadding ", height);
+//            var base = this;
+//            var cic = base.$el.find(".carousel-inner-content");
+//            var items = $(cic).children();
+//            items.each(function () {
+//                var elt = $(this);
+//                var firstChild = elt.children(":first");
+//                console.log("firstChild", firstChild);
+//                if (firstChild) {
+//                    var firstChild_height = parseInt(firstChild.css("height"), 10);
+//                    console.log("firstChild_height", firstChild_height);
+//                    console.log("firstChild $ ", $(firstChild));
+//                    var paddingTop = (parseInt(height, 10) - firstChild_height) / 2;
+//                    console.log("paddingTop", paddingTop);
+//                    elt.css("padding-top", paddingTop + "px");
+//                }
+//            });
         },
         getActiveIndex:function () {
             var base = this;
             var active_item = base.$el.find(".item.active");
             var index = ($(active_item).parent().children()).index(active_item);
             var index2 = active_item.attr("index");
-            console.log("index", index);
-            console.log("index2", index2);
+//            console.log("index", index);
+//            console.log("index2", index2);
 
             return index2;
         },
@@ -172,11 +172,11 @@ define([
             base.$el.delegate(".carousel-control", "click", function () {
                 var elt = $(this);
                 if (elt.attr("data-slide") == "prev") {
-                    console.log("carousel-control PREV");
+//                    console.log("carousel-control PREV");
                     base.previous();
                 }
                 if (elt.attr("data-slide") == "next") {
-                    console.log("carousel-control NEXT");
+//                    console.log("carousel-control NEXT");
                     base.next();
                 }
 
@@ -184,7 +184,7 @@ define([
             base.$el.delegate(".carousel-index-indicators li", "click", function () {
                 var elt = $(this);
                 var nb = elt.attr("data-slide-to");
-                console.log(".carousel-index-indicators li ", nb);
+//                console.log(".carousel-index-indicators li ", nb);
                 base.slideTo(nb);
             });
 

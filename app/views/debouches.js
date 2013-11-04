@@ -54,12 +54,6 @@ define([
 
             base.$el.html(div);
             base.carousel.init(templates_list, true, true);
-            base.addHeightPadding();
-        },
-        addHeightPadding:function () {
-            var base = this;
-            var height = base.$el.find(".debouches-container").css("height");
-//            base.carousel.addHeightPadding(height);
         },
         registerEvents:function () {
             var base = this;
